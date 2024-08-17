@@ -1,37 +1,19 @@
-const express = require('express');
-const Razorpay = require('razorpay');
-const bodyParser = require('body-parser');
-require('dotenv').config();
+const express = require('express')
+const app = express()
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
 
-const app = express();
-const port = 3000;
+const db = require('./db') //importing DB
 
-app.use(express.static('public'));
-app.use(bodyParser.json());
+app.get("/",(req,res)=>{
+    res.send("helllo ")
+})
+const Menuroute = require('./routes/Menuroutes')
+app.use('/Menu',Menuroute);
 
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET,
-});
+const PersonRoutes = require('./routes/PeopleRoutes');
+app.use('/person',PersonRoutes);
 
-app.post('/create-order', async (req, res) => {
-  const { amount, currency, receipt, payment_capture } = req.body;
-
-  const options = {
-    amount: amount * 100, // amount in the smallest currency unit
-    currency,
-    receipt,
-    payment_capture,
-  };
-
-  try {
-    const order = await razorpay.orders.create(options);
-    res.json(order);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(3000,()=>{
+    console.log("server is running")
 });
