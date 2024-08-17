@@ -27,7 +27,7 @@ router.post('/',async(req,res)=>{
         res.status(500).json({error:'server problem'});
     }
 })
-//METHOD FOR GETTING A SPECIFIC LIST OF PERSON WITH THEIR WORK OCCUPATION
+
 
 
 router.get('/:taste',async (req,res)=>{
