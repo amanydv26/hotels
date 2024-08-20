@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')//importing mongoose
 
 //const mongoURL = 'mongodb://localhost:27017/hotels'//hotels is the name of the database saved in mongodb & definiing the url.
-const mongoURL = 'mongodb+srv://Aman2626:qwertyuiop@hotels.x6itr.mongodb.net/'
+const mongoURL = 'mongodb+srv://Aman2626:qwertyuiop@hotels.x6itr.mongodb.net/'//connected to atlas
 //set up mongodb connection
 mongoose.connect(mongoURL,{
     useNewUrlParser:true,
