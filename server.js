@@ -6,7 +6,7 @@ app.use(bodyParser.json())
 const db = require('./db') //importing DB
 
 app.get("/",(req,res)=>{
-    res.send("helllo ")
+    res.send("helllo!!! welcome to our hotel use goto menu page for getting our menu ../menu ")
 })
 const Menuroute = require('./routes/Menuroutes')
 app.use('/Menu',Menuroute);
