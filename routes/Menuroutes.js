@@ -11,7 +11,7 @@ router.get('/',async (req,res)=>{
         res.status(200).json(menuData);
     }catch(err){
         console.log(err)
-        res.status(500).json({error:'server problem'});
+        res.status(500).json({error:'server problem'});//MESSAGE DEKHO
     }
 })
 router.post('/',async(req,res)=>{

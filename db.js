@@ -1,7 +1,8 @@
 //this file is resposible for connecting to the database.
 const mongoose = require('mongoose')//importing mongoose
 
-const mongoURL = 'mongodb://localhost:27017/hotels'//hotels is the name of the database saved in mongodb & definiing the url.
+//const mongoURL = 'mongodb://localhost:27017/hotels'//hotels is the name of the database saved in mongodb & definiing the url.
+const mongoURL = 'mongodb+srv://Aman2626:qwertyuiop@hotels.x6itr.mongodb.net/'
 //set up mongodb connection
 mongoose.connect(mongoURL,{
     useNewUrlParser:true,
